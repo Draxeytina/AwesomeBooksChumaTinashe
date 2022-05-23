@@ -23,17 +23,6 @@ window.addEventListener("DOMContentLoaded", () => {
       this.createBook();
     }
 
-    deleteBook() {
-      [...document.querySelectorAll(".deletebtn")].forEach((element) => {
-        const elementIndex = parseInt(element.getAttribute("data"), 10);
-        element.addEventListener("click", () => {
-          this.library.splice(elementIndex, 1);
-          localStorage.setItem("bookCollection", JSON.stringify(this.library));
-          this.createBook();
-        });
-      });
-    }
-
     createBook() {
       bookSection.innerHTML = "";
       for (let i = 0; i < this.library.length; i += 1) {
@@ -53,6 +42,17 @@ window.addEventListener("DOMContentLoaded", () => {
         bookSection.appendChild(bookContainer);
       }
       this.deleteBook();
+    }
+
+    deleteBook() {
+      [...document.querySelectorAll(".deletebtn")].forEach((element) => {
+        const elementIndex = parseInt(element.getAttribute("data"), 10);
+        element.addEventListener("click", () => {
+          this.library.splice(elementIndex, 1);
+          localStorage.setItem("bookCollection", JSON.stringify(this.library));
+          this.createBook();
+        });
+      });
     }
   }
 
