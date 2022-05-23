@@ -1,9 +1,4 @@
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
+import Book from './Book.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   const bookSection = document.querySelector('.book-list');
