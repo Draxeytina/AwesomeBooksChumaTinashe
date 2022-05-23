@@ -1,4 +1,5 @@
-import Book from './Book';
+import Book from './Book.js';
+
 window.addEventListener('DOMContentLoaded', () => {
   const bookSection = document.querySelector('.book-list');
   const bookTitle = document.getElementById('title');
