@@ -1,3 +1,16 @@
-h1 {
-  font-size: large;
+table{
+    width: 100%;
+    margin: 20px auto;
 }
+tr{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+ h2{
+     text-align: center;
+ }
+
+ .add-new {
+     margin: 10px auto;
+ }

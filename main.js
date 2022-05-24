@@ -18,24 +18,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
     createBook() {
       bookSection.innerHTML = '';
+      const bookListHeader = document.createElement('h2');
+      const bookTable = document.createElement('table');
+  bookListHeader.textContent = 'All awesome books';
+  bookSection.appendChild(bookListHeader);
+  bookSection.appendChild(bookTable)
+
       for (let i = 0; i < this.library.length; i += 1) {
-        const bookContainer = document.createElement('div');
-        const title = document.createElement('p');
-        const author = document.createElement('p');
+        const bookContainer = document.createElement('tr');
+        const bookInfo = document.createElement('h2')
         const deleteBtn = document.createElement('button');
-        const divLine = document.createElement('hr');
         deleteBtn.setAttribute('class', 'deletebtn');
         deleteBtn.setAttribute('data', i);
 
-        title.textContent = this.library[i].title;
-        author.textContent = this.library[i].author;
+        bookInfo.textContent = `"${this.library[i].title}" by ${this.library[i].author}`;
+        
         deleteBtn.textContent = 'Remove';
 
-        bookContainer.appendChild(title);
-        bookContainer.appendChild(author);
+        bookContainer.appendChild(bookInfo);
         bookContainer.appendChild(deleteBtn);
-        bookContainer.appendChild(divLine);
-        bookSection.appendChild(bookContainer);
+        bookTable.appendChild(bookContainer);
       }
       this.deleteBook();
     }
