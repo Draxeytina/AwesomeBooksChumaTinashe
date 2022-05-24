@@ -7,6 +7,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.add-new');
   const dateSection = document.querySelector('.date')
   const contactSection = document.querySelector('.contact-section')
+  const navList = Array.from(
+    document.querySelectorAll(".nav-links")[0].children
+  );
+  const homePage = document.getElementById('home');
+
   class Library {
     constructor() {
       this.library = JSON.parse(localStorage.getItem('bookCollection')) || [];
@@ -69,6 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
     bookAuthor.value = '';
   });
 
+  // set date to appear using a timer
   function siteTime() {
     const today = new Date();
     const localLanguage = navigator.language;
@@ -84,11 +90,49 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   setInterval(siteTime, 1000);
+  
+  // hide other sections on load
+  function initialise() {
+  form.classList.add("hide");
+  contactSection.classList.add("hide");
+  }
 
-   function initialise() {
+  window.addEventListener('load', (initialise));
+
+  // enhence navigation when user clicks nav links
+  function navigate(key) {
+    switch (key) {
+      case "nav-list":
+        bookSection.classList.remove("hide");
+        form.classList.add("hide");
+        contactSection.classList.add("hide");
+        break;
+      case "nav-add":
+        bookSection.classList.add("hide");
+        form.classList.remove("hide");
+        contactSection.classList.add("hide");
+        break;
+      case "nav-contact":
+        bookSection.classList.add("hide");
+        form.classList.add("hide");
+        contactSection.classList.remove("hide");
+        break;
+      default:
+        break;
+    }
+  }
+
+  navList.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      navigate(e.target.id);
+    });
+  });
+
+  // Display default settings when user clicks nav heading
+  homePage.addEventListener('click', (e) => {
+    bookSection.classList.remove("hide");
     form.classList.add("hide");
     contactSection.classList.add("hide");
-    
-  }
-  window.addEventListener('load', (initialise));
+  })
+
 });
