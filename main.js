@@ -20,21 +20,19 @@ window.addEventListener('DOMContentLoaded', () => {
       bookSection.innerHTML = '';
       const bookListHeader = document.createElement('h2');
       const bookTable = document.createElement('table');
-  bookListHeader.textContent = 'All awesome books';
-  bookSection.appendChild(bookListHeader);
-  bookSection.appendChild(bookTable)
+      bookListHeader.textContent = 'All awesome books';
+      bookSection.appendChild(bookListHeader);
+      bookSection.appendChild(bookTable);
 
       for (let i = 0; i < this.library.length; i += 1) {
         const bookContainer = document.createElement('tr');
-        const bookInfo = document.createElement('h2')
+        const bookInfo = document.createElement('h2');
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('class', 'deletebtn');
         deleteBtn.setAttribute('data', i);
 
         bookInfo.textContent = `"${this.library[i].title}" by ${this.library[i].author}`;
-        
         deleteBtn.textContent = 'Remove';
-
         bookContainer.appendChild(bookInfo);
         bookContainer.appendChild(deleteBtn);
         bookTable.appendChild(bookContainer);
