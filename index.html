@@ -8,15 +8,38 @@
   <title>Document</title>
 </head>
 <body>    
-  
+  <header>
+    <nav class="navbar">
+      <h1>Awesome Books</h1>
+      <ul class="navlinks">
+        <li><a href="#" id="nav-list">List</a></li>
+        <li><a href="#" id="nav-add">Add book</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="date">Date placeholder</p>
+  </header>
   <section class="book-list"></section>
   <form class="add-new">
-    <hr>
     <h2>Add a new book</h2>
     <input type="text" id="title" placeholder="Title" />
     <input type="text" id="author" placeholder="Author" />
     <input type="submit" id="submit" value="Add" />
   </form>
+  <section id="contact" class="contact-section">
+    <h2>Contact Information</h2>
+    <p>
+      If you would like to reach out to the team behind awesome books, kindly get in touch!
+    </p>
+    <div>
+      <p>Our Email: edwardachike@gmail.com</p>
+      <p>Our Phone number: +263 733 871 561</p>
+      <p>Our Address: 13 Binon Street, Lagos, Nigeria</p>
+    </div>
+  </section>
+  <footer>
+    <p>Copyright: Awesome Books 2022</p>
+  </footer>
   <script type="module" src="./main.js"></script>
 </body>
 </html>

@@ -5,6 +5,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const bookTitle = document.getElementById('title');
   const bookAuthor = document.getElementById('author');
   const form = document.querySelector('.add-new');
+  const dateSection = document.querySelector('.date')
+  const contactSection = document.querySelector('.contact-section')
   class Library {
     constructor() {
       this.library = JSON.parse(localStorage.getItem('bookCollection')) || [];
@@ -66,4 +68,27 @@ window.addEventListener('DOMContentLoaded', () => {
     bookTitle.value = '';
     bookAuthor.value = '';
   });
+
+  function siteTime() {
+    const today = new Date();
+    const localLanguage = navigator.language;
+    const options = {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: "false",
+    };
+    dateSection.textContent = `${today.toLocaleTimeString(localLanguage, options)}`;
+  }
+
+  setInterval(siteTime, 1000);
+
+   function initialise() {
+    form.classList.add("hide");
+    contactSection.classList.add("hide");
+    
+  }
+  window.addEventListener('load', (initialise));
 });

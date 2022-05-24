@@ -13,6 +13,31 @@ h2 {
   text-align: center;
 }
 
+li {
+  list-style:none;
+  float: left;
+  margin: 10px;
+}
+
 .add-new {
   margin: 10px auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+}
+
+.bookSection {
+  display: flex;
+}
+
+.hide {
+  display: none;
 }
