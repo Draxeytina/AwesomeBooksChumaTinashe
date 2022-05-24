@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
         deleteBtn.setAttribute('class', 'deletebtn');
         deleteBtn.setAttribute('data', i);
 
-        bookInfo.textContent = `"${this.library[i].title}" by ${this.library[i].author}`;
+        bookInfo.textContent = `"${this.library[i].title}" authored by ${this.library[i].author}`;
         deleteBtn.textContent = 'Remove';
         bookContainer.appendChild(bookInfo);
         bookContainer.appendChild(deleteBtn);
