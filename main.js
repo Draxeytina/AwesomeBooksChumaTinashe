@@ -113,7 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
       default:
         break;
     }
-  } 
+  }
   navList.forEach((item) => {
     item.addEventListener('click', (e) => {
       navigate(e.target.id);
