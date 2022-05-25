@@ -88,16 +88,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   setInterval(siteTime, 1000);
-  
-  // hide other sections on load
   function initialise() {
   form.classList.add('hide');
   contactSection.classList.add('hide');
   }
-
   window.addEventListener('load', (initialise));
-
-  // enhence navigation when user clicks nav links
   function navigate(key) {
     switch (key) {
       case 'nav-list':
@@ -117,8 +112,8 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
       default:
         break;
-    }
-  }
+    };
+  };
 
  
   navList.forEach((item) => {
@@ -126,16 +121,16 @@ window.addEventListener('DOMContentLoaded', () => {
       navigate(e.target.id);
       navList.forEach(hhh=>{
         hhh.children[0].classList.remove('active');
-      })
+      });
       item.children[0].classList.add('active');
     });
   });
 
   // Display default settings when user clicks nav heading
-  homePage.addEventListener('click', (e) => {
+  homePage.addEventListener('click', () => {
     bookSection.classList.remove('hide');
     form.classList.add('hide');
     contactSection.classList.add('hide');
-  })
+  });
 
 });
