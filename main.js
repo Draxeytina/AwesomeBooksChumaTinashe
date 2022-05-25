@@ -89,8 +89,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setInterval(siteTime, 1000);
   function initialise() {
-  form.classList.add('hide');
-  contactSection.classList.add('hide');
+    form.classList.add('hide');
+    contactSection.classList.add('hide');
   }
   window.addEventListener('load', (initialise));
   function navigate(key) {
@@ -112,14 +112,12 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
       default:
         break;
-    };
-  };
-
- 
+    }
+  } 
   navList.forEach((item) => {
     item.addEventListener('click', (e) => {
       navigate(e.target.id);
-      navList.forEach(hhh=>{
+      navList.forEach((hhh) => {
         hhh.children[0].classList.remove('active');
       });
       item.children[0].classList.add('active');
@@ -132,5 +130,4 @@ window.addEventListener('DOMContentLoaded', () => {
     form.classList.add('hide');
     contactSection.classList.add('hide');
   });
-
 });
