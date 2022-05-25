@@ -122,9 +122,14 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+ 
   navList.forEach((item) => {
-    item.addEventListener("click", (e) => {
+    item.addEventListener('click', (e) => {
       navigate(e.target.id);
+      navList.forEach(hhh=>{
+        hhh.children[0].classList.remove('active');
+      })
+      item.children[0].classList.add('active');
     });
   });
 
