@@ -3,6 +3,12 @@ table {
   margin: 20px auto;
 }
 
+tr {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
 tr:nth-child(odd) {
   background-color: darkgray;
 }
@@ -11,7 +17,8 @@ nav {
   border: 1px solid #000;
   padding: 10px;
 }
-section{
+
+section {
   padding: 10px;
 }
 
@@ -26,18 +33,12 @@ a.active {
   color: #add8e6;
 }
 
-tr {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px auto;
-}
-
 h2 {
   text-align: center;
 }
 
 li {
-  list-style:none;
+  list-style: none;
   float: left;
   margin: 10px;
 }
